@@ -1,0 +1,79 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="card-title">Adicionar novo item</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-title">
+
+                                    <span routerLink="/form" class="material-icons pull-right pointer">
+                                        reply
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <form [formGroup]="resourceForm" (submit)="submit()">
+
+                            <div class="form-row col-md-12">
+
+                                <div class="form-group">
+                                    <mat-form-field class="mat-form-field-max-width-4">
+                                        <input matInput placeholder="Descrição item" id="dsForm" formControlName="dsForm">
+                                        <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('dsForm'))">
+                                            {{getErrorMessage(resourceForm.get('dsForm'), 'dsForm')}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="form-row col-md-12">
+
+                                <div class="form-group">
+                                    <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+                                            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                                            [videoOptions]="videoOptions"
+                                            [imageQuality]="1"
+                                            (cameraSwitched)="cameraWasSwitched($event)"
+                                            (initError)="handleInitError($event)"
+                                    ></webcam>
+                                </div>
+                            </div>
+
+                            <button mat-raised-button type="button"  (click)="triggerSnapshot();" *ngIf="showWebcam"
+                                    class="btn btn-lg btn-block btn-primary pull-right">
+                                Tirar Foto
+                            </button>
+
+                            <button mat-raised-button type="button"  (click)="showNextWebcam(true);" *ngIf="showWebcam && multipleWebcamsAvailable"
+                                    class="btn btn-lg btn-block btn-primary pull-right">
+                                Virar Camera
+                            </button>
+
+                            <button mat-raised-button type="button"  (click)="toggleWebcam();"
+                                    class="btn btn-lg btn-block btn-primary pull-right">
+                                Abrir Camera
+                            </button>
+
+                            <button mat-raised-button type="submit"  [disabled]="isDisabledForm"
+                                    class="btn btn-lg btn-block btn-primary pull-right">
+                                Salvar
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

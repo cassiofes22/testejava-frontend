@@ -1,0 +1,50 @@
+<div class="tab-pane active" id="geral">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-info">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="card-title">Doadores por Estado</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-title">
+
+                            <span title="adicionar" routerLink="new" class="material-icons pull-right pointer">
+                                add_box
+                            </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <!-- <table class="table table-hover"> -->
+                        <table class="table">
+                            <thead class=" text-info">
+                                <tr>
+                                    <th>Estado</th>
+                                    <th>Quantidade</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr *ngFor="let estado of resources">
+                                    <td>
+                                        <strong>{{estado.estado}}</strong><br>
+                                    </td>
+                                    <td>
+                                        <strong>{{estado.qtd}}</strong><br>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,151 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-tabs card-header-info">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+                            <span class="nav-tabs-title">Relatório</span>
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link active" href="#geral" data-toggle="tab">
+                                        <i class="material-icons">build</i> Geral
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#estado" data-toggle="tab">
+                                        <i class="material-icons">description</i> Cand. por Estado
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#imc" data-toggle="tab">
+                                        <i class="material-icons">description</i> IMC Médio
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#obesidade" data-toggle="tab">
+                                        <i class="material-icons">description</i> % Obesidade
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#media_idade" data-toggle="tab">
+                                        <i class="material-icons">description</i> Média Idade
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#doadores" data-toggle="tab">
+                                        <i class="material-icons">description</i> Doadores / Tipo
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="tab-content">
+
+                          <div class="tab-pane active" id="geral">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header card-header-info">
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="card-title">Pessoas</h4>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card-title">
+                    
+                                                    <span title="adicionar" routerLink="new" class="material-icons pull-right pointer">
+                                                        add_box
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <!-- <table class="table table-hover"> -->
+                                                <table class="table">
+                                                    <thead class=" text-info">
+                                                        <tr>
+                                                            <th>Nome</th>
+                                                            <th>CPF</th>
+                                                            <th>RG</th>
+                                                            <th>Tipo Sang.</th>
+                                                            <!-- <th><span class="float-center">Ações</span></th> -->
+                                                        </tr>
+                                                    </thead>
+                    
+                                                    <tbody>
+                                                        <tr *ngFor="let pessoa of resources">
+                                                            <td>
+                                                                <strong>{{pessoa.nome}}</strong><br>
+                                                            </td>
+                                                            <td>
+                                                                <strong>{{pessoa.cpf}}</strong><br>
+                                                            </td>
+                                                            <td>
+                                                                <strong>{{pessoa.rg}}</strong><br>
+                                                            </td>
+                                                            <td>
+                                                                <strong>{{pessoa.tipo_sanguineo}}</strong><br>
+                                                            </td>
+                                                            <!-- <td>
+                                                                <span class="float-center">
+                                                                    <span title="editar" class="material-icons pointer text-warning"
+                                                                        [routerLink]="[pessoa.id, 'edit']">
+                                                                        edit
+                                                                    </span>
+                                                                    <span title="excluir" class="material-icons pointer text-danger"
+                                                                        (click)="deleteResource(pessoa)">
+                                                                        delete_outline
+                                                                    </span>
+                                                                </span>
+                                                            </td> -->
+                                                        </tr>
+                    
+                                                    </tbody>
+                                                </table>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="tab-pane" id="estado">
+                              <app-estado></app-estado>
+                          </div>
+
+                          <div class="tab-pane" id="imc">
+                            <app-imc></app-imc>
+                          </div>
+
+                          <div class="tab-pane" id="obesidade">
+                            <app-obesidade></app-obesidade>
+                          </div>
+
+                          <div class="tab-pane" id="media_idade">
+                            <app-media-idade></app-media-idade>
+                          </div>
+
+                          <div class="tab-pane" id="doadores">
+                            <app-doadores></app-doadores>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

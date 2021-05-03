@@ -1,0 +1,27 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let user of resources">
+                            <td>
+                                <strong>{{user.nmUser}}</strong><br>
+                                <small>{{user.dsEmail}}</small>
+                            </td>
+                            <td>
+                                <span class="float-right">
+                                    <span title="excluir" class="material-icons pointer text-danger"
+                                        *ngIf="hideIsAdminEmail(user.dsEmail)" (click)="deleteResource(user)">
+                                        delete_outline
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+                                

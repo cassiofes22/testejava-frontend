@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="card-title">Parceiros</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-title">
+
+                                    <span title="adicionar" routerLink="new" class="material-icons pull-right pointer">
+                                        add_box
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <table class="table table-hover">
+
+                            <thead>
+                            <tr>
+                                <th>Descrição Item</th>
+                                <th><span class="float-center">Ações</span></th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            <tr *ngFor="let form of resources">
+
+                                <td>
+                                    <strong>{{form.dsForm}}</strong><br>
+                                </td>
+
+                                <td>
+                                    <span class="float-center">
+                                        <span title="editar" class="material-icons pointer text-warning"
+                                              [routerLink]="[form.idForm, 'edit']">
+                                            edit
+                                        </span>
+                                       <span title="excluir" class="material-icons pointer text-danger"
+                                             (click)="deleteResource(form)">
+                                            delete_outline
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<!-- <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="card-title">Adicionar usuário</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-title">
+
+                                    <span routerLink="/users" class="material-icons pull-right pointer">
+                                        reply
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body"> -->
+
+                        <form [formGroup]="resourceForm" (submit)="submitForm()">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <mat-form-field class="example-full-width">
+                                            
+                                            <input matInput placeholder="Nome" id="nmUser" formControlName="nmUser">
+                                            <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('nmUser'))">
+                                                {{getErrorMessage(resourceForm.get('nmUser'), 'nmUser')}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput type="email" placeholder="Ex. reply@psg.tec.br" id="dsEmail"
+                                                formControlName="dsEmail">
+                                            <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('dsEmail'))">
+                                                {{getErrorMessage(resourceForm.get('dsEmail'), 'dsEmail')}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group bmd-form-group">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="DDD" id="nuDddCel" formControlName="nuDddCel">
+                                            <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('nuDddCel'))">
+                                                {{getErrorMessage(resourceForm.get('nuDddCel'), 'nuDddCel')}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group bmd-form-group">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Telefone Cel." id="nuCel"
+                                                formControlName="nuCel">
+                                            <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('nuCel'))">
+                                                {{getErrorMessage(resourceForm.get('nuCel'), 'nuCel')}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <button type="submit" [disabled]="isDisabledForm" class="btn btn-primary pull-right mat-raised-button" >
+                                <span class="mat-button-wrapper">Salvar</span>
+                            </button>
+                        </form>
+                    <!-- </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+

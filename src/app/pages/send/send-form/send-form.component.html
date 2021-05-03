@@ -1,0 +1,47 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="card-title">Enviar JSON</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- <form [formGroup]="resourceForm" (submit)="submitForm()"> -->
+                            <form>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <!-- <div class="form-group bmd-form-group"> -->
+                                        <!-- <mat-form-field class="example-full-width"> -->
+                                            <!-- <input matInput placeholder="Descrição" id="dsTask" formControlName="dsTask" -->
+                                            <input type="file" id="file" (change)="fileChanged($event)">
+                                        <!-- <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('file'))">
+                                            {{getErrorMessage(resourceForm.get('file'), 'file')}}
+                                        </mat-error>
+                                    </mat-form-field> -->
+                                    <!-- </div> -->
+                                </div>
+                                
+                            </div>
+
+                            <hr>
+                            <button type="button" [disabled]="!json" class="btn btn-primary pull-right mat-raised-button" (click)="enviaArquivo()" >
+                                <span class="mat-button-wrapper">Enviar</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,77 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="card-title">Tarefas</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-title">
+
+                                <span title="adicionar" routerLink="new" class="material-icons pull-right pointer">
+                                    add_box
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <!-- <table class="table table-hover"> -->
+                            <table class="table">
+                                <thead class=" text-info">
+                                    <tr>
+                                        <th>Descrição</th>
+                                        <th>Prioridade</th>
+                                        <th>Status</th>
+                                        <th>Tipo</th>
+                                        <th>Data de Conclusão</th>
+                                        <th><span class="float-center">Ações</span></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr *ngFor="let task of resources">
+                                        <td>
+                                            <strong>{{task.dsTask}}</strong><br>
+                                        </td>
+                                        <td>
+                                            <strong>{{task.nuPriority}}</strong><br>
+                                        </td>
+                                        <td>
+                                            <strong>{{task.stTask}}</strong><br>
+                                        </td>
+                                        <td>
+                                            <strong>{{task.tpTask}}</strong><br>
+                                        </td>
+                                        <td>
+                                            <strong>{{task.dtTaskDone}}</strong><br>
+                                        </td>
+                                        <td>
+                                            <span class="float-center">
+                                                <span title="editar" class="material-icons pointer text-warning"
+                                                    [routerLink]="[task.idTask, 'edit']">
+                                                    edit
+                                                </span>
+                                                <span title="excluir" class="material-icons pointer text-danger"
+                                                    (click)="deleteResource(task)">
+                                                    delete_outline
+                                                </span>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

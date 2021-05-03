@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-3">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-6 col-md-6 col-sm-6 logo_center">
+                            <img [src]="loadImage()" class="img-fluid p-1" alt="Gestão de Manutenção">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 ml-auto mr-auto p-4">
+                            <form [formGroup]="resourceForm" (submit)="submitForm()"
+                                class="form ng-untouched ng-pristine ng-valid p-3">
+                                <div>
+                                    <div>
+                                        <h4 class="card-title text-center">Bem vindo de volta! </h4>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-danger"><i class="fa fa-google pr-2"></i>Google+</button>
+                                        </div>
+                                        <p class="card-description text-center font-weight-bold p-2">Ou</p>
+                                        <span class="bmd-form-group">
+
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Login" id="username"
+                                                    formControlName="username">
+
+                                                <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('username'))">
+                                                    {{getErrorMessage(resourceForm.get('username'), 'username')}}
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </span>
+                                        <span class="bmd-form-group">
+
+                                            <mat-form-field class="example-full-width">
+
+                                                <input type="password" matInput placeholder="Senha" id="password"
+                                                    formControlName="password">
+
+                                                <mat-error *ngIf="mustShowErrorMessage(resourceForm.get('password'))">
+                                                    {{getErrorMessage(resourceForm.get('password'), 'password')}}
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row align-items-center p-3">
+                                    <div class="col-md-6 text-center">
+                                        <button type="submit" [disabled]="isDisabledForm"
+                                            class="btn btn-lg btn-primary pull-center mat-raised-button">
+                                            <span class="mat-button-wrapper"> Login </span>
+                                        </button>
+                                    </div>
+                                    <hr>
+                                    <div class="col-md-6 text-center p-2">
+                                        <a class="medium" routerLink="/user-reset-password">Esqueceu sua senha?</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
